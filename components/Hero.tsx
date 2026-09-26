@@ -5,7 +5,7 @@ import { Mic, Waves } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[calc(100vh-65px)] items-center justify-center overflow-hidden bg-linear-to-br from-slate-950 via-cyan-950/80 to-black pt-16 pb-20 sm:pt-24 sm:pb-28">
+    <section className="relative flex min-h-[calc(100vh-65px)] items-center justify-center overflow-hidden bg-linear-to-br from-slate-950 via-cyan-950/80 to-black  ">
       {/* Soft cyan glow overlays */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-0 h-125 w-200 -translate-x-1/2 rounded-full bg-cyan-500/15 blur-3xl animate-pulse" />
@@ -13,13 +13,13 @@ export default function Hero() {
         <div className="absolute top-1/3 left-0 h-64 w-64 rounded-full bg-sky-500/10 blur-3xl animate-pulse [animation-delay:0.8s]" />
       </div>
 
-      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+      <div className="mx-auto max-w-4xl  px-4 text-center sm:px-6">
         {/* Mic icon with animated wave bars */}
         <div className="mb-10 flex justify-center">
           <div className="relative">
             <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-linear-to-br from-cyan-500 to-cyan-700 shadow-xl shadow-cyan-500/30 sm:h-24 sm:w-24 transition-transform duration-300 hover:scale-105">
               <Mic
-                className="h-10 w-10 text-white sm:h-12 sm:w-12"
+                className="h-8 w-8 text-white sm:h-12 sm:w-12"
                 strokeWidth={1.8}
               />
             </div>
@@ -56,14 +56,14 @@ export default function Hero() {
           </div>
         </div>
 
-        <h1 className="text-3xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
           Help Us Build{" "}
           <span className="bg-linear-to-r from-cyan-300 to-sky-400 bg-clip-text text-transparent">
             Better Voice AI
           </span>
         </h1>
 
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:mt-6 sm:text-lg lg:text-xl">
+        <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-300 sm:mt-6 sm:text-base md:text-lg lg:text-xl">
           Your voice can help train and improve the next generation of voice
           technology. Record your answers to 138 simple questions and download
           your complete voice dataset when you&apos;re finished.
@@ -81,7 +81,7 @@ export default function Hero() {
         <div className="mt-8 sm:mt-10">
           <Link
             href="/collect"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-600 px-3 md:px-5 lg:px-8  py-1.5 md:py-2.5 lg:py-3.5 text-sm md:text-base font-semibold text-white shadow-lg shadow-cyan-500/30 border border-cyan-500/50 transition-all duration-300 hover:bg-white hover:text-cyan-900 hover:border-white hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-600 px-3 md:px-5 lg:px-8  py-1.5 md:py-2.5 lg:py-3.5 text-sm md:teba font-semibold text-white shadow-lg shadow-cyan-500/30 border border-cyan-500/50 transition-all duration-300 hover:bg-white hover:text-cyan-900 hover:border-white hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950"
           >
             <Mic className="h-5 w-5" />
             RECORD NOW

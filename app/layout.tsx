@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "VoiceCollect — Help Build Better Voice AI",
+  title: "VoiceCollect – by Al-amin Sujon",
   description:
     "Record your answers to 138 simple questions and download your complete voice dataset. Entirely client-side, private, and free.",
   keywords: ["voice dataset", "voice AI", "speech collection", "VoiceCollect"],
@@ -29,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         {children}
         <Toaster position="top-center" richColors />
+        {/* Floating credit */}
       </body>
     </html>
   );

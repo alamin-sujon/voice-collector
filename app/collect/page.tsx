@@ -182,7 +182,7 @@ export default function CollectPage() {
         </div>
 
         {/* Recorder Card */}
-        <div className="rounded-2xl border border-cyan-500/15 bg-slate-900/60 p-5 shadow-xl shadow-cyan-950/20 backdrop-blur-sm sm:p-6">
+        <div className="rounded-2xl border border-cyan-500/15 bg-slate-900/60 p-2 shadow-xl shadow-cyan-950/20 backdrop-blur-sm sm:p-6">
           <VoiceRecorder
             key={currentQuestion.id}
             questionId={currentQuestion.id}
