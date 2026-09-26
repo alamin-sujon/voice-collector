@@ -52,12 +52,12 @@ export default function AudioPreview({ blob, duration }: AudioPreviewProps) {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
-      <p className="mb-3 text-sm font-medium text-slate-600">Your recording</p>
+    <div className="rounded-xl border border-cyan-500/15 bg-slate-900/50 p-4">
+      <p className="mb-3 text-sm font-medium text-slate-300">Your recording</p>
       <div className="flex items-center gap-3">
         <button
           onClick={toggle}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-600 text-white shadow-sm transition hover:bg-brand-700 active:scale-95"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-cyan-600 text-white shadow-md shadow-cyan-500/25 transition hover:bg-cyan-500 active:scale-95"
           aria-label={playing ? "Pause" : "Play"}
         >
           {playing ? (
@@ -67,13 +67,13 @@ export default function AudioPreview({ blob, duration }: AudioPreviewProps) {
           )}
         </button>
         <div className="flex-1">
-          <div className="h-2 overflow-hidden rounded-full bg-slate-200">
+          <div className="h-2 overflow-hidden rounded-full bg-slate-700">
             <div
-              className="h-full rounded-full bg-brand-500 transition-all duration-100"
+              className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-cyan-400 transition-all duration-100"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <div className="mt-1.5 flex justify-between text-xs tabular-nums text-slate-500">
+          <div className="mt-1.5 flex justify-between text-xs tabular-nums text-slate-400">
             <span>{formatDuration(currentTime)}</span>
             <span>{formatDuration(duration)}</span>
           </div>

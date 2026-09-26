@@ -103,20 +103,20 @@ export default function CollectPage() {
 
   if (!ready) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-50">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-brand-200 border-t-brand-600" />
+      <div className="flex min-h-screen items-center justify-center bg-slate-950">
+        <div className="h-10 w-10 animate-spin rounded-full border-4 border-cyan-900 border-t-cyan-400" />
       </div>
     );
   }
 
   if (compatError) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-50 p-4">
-        <div className="max-w-md rounded-2xl border border-amber-200 bg-amber-50 p-6 text-center">
-          <p className="text-amber-900">{compatError}</p>
+      <div className="flex min-h-screen items-center justify-center bg-slate-950 p-4">
+        <div className="max-w-md rounded-2xl border border-amber-500/30 bg-amber-950/40 p-6 text-center backdrop-blur-sm">
+          <p className="text-amber-200">{compatError}</p>
           <Link
             href="/"
-            className="mt-4 inline-block text-brand-600 hover:underline"
+            className="mt-4 inline-block text-cyan-400 hover:text-cyan-300 transition"
           >
             ← Back to home
           </Link>
@@ -126,7 +126,7 @@ export default function CollectPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-linear-to-b from-slate-950 via-slate-950 to-cyan-950/30">
       {showResume && (
         <ResumeSessionDialog
           completedCount={completedIds.length}
@@ -136,47 +136,53 @@ export default function CollectPage() {
         />
       )}
 
-      <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+      {/* Header */}
+      <header className="sticky top-0 z-40 border-b border-cyan-500/10 bg-slate-950/70 backdrop-blur-xl">
         <div className="mx-auto flex h-14 max-w-2xl items-center justify-between px-4 sm:px-6">
           <Link
             href="/"
-            className="flex items-center gap-1.5 text-sm text-slate-500 transition hover:text-slate-800"
+            className="flex items-center gap-1.5 text-sm text-slate-400 transition hover:text-cyan-300"
           >
             <ChevronLeft className="h-4 w-4" />
             Home
           </Link>
+
           <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-600 text-white">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-linear-to-br from-cyan-500 to-cyan-700 text-white shadow-md shadow-cyan-500/20">
               <Mic className="h-3.5 w-3.5" />
             </div>
-            <span className="text-sm font-semibold text-slate-800">
+            <span className="text-sm font-semibold text-white">
               VoiceCollect
             </span>
           </div>
+
           <div className="w-14" />
         </div>
       </header>
 
       <main className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
+        {/* Progress */}
         <div className="mb-8">
-          <ProgressBar current={currentIndex + 1} total={TOTAL_QUESTIONS} />
+          <ProgressBar current={currentIndex} total={TOTAL_QUESTIONS} />
         </div>
 
-        <div className="mb-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 animate-slide-up">
-          <p className="mb-2 text-xs font-medium  uppercase tracking-wider text-black text-brand-600">
+        {/* Question Card */}
+        <div className="mb-6 rounded-2xl border border-cyan-500/15 bg-slate-900/60 p-6 shadow-xl shadow-cyan-950/20 backdrop-blur-sm sm:p-8 animate-slide-up">
+          <p className="mb-2 text-xs font-medium uppercase tracking-wider text-white">
             Question {currentQuestion.id}
             {completedIds.includes(currentQuestion.id) && (
-              <span className="ml-2 inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-700">
+              <span className="ml-2 inline-flex items-center rounded-full bg-emerald-500/15 px-2 py-0.5 text-[10px] font-semibold text-emerald-400">
                 ✓ Completed
               </span>
             )}
           </p>
-          <h1 className="text-xl font-semibold leading-relaxed text-slate-900 sm:text-2xl">
+          <h1 className="text-xl font-semibold leading-relaxed text-white sm:text-2xl">
             {currentQuestion.text}
           </h1>
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+        {/* Recorder Card */}
+        <div className="rounded-2xl border border-cyan-500/15 bg-slate-900/60 p-5 shadow-xl shadow-cyan-950/20 backdrop-blur-sm sm:p-6">
           <VoiceRecorder
             key={currentQuestion.id}
             questionId={currentQuestion.id}
@@ -186,8 +192,9 @@ export default function CollectPage() {
           />
         </div>
 
-        <div className="mt-6 flex items-start gap-2.5 rounded-xl bg-slate-100/80 px-4 py-3 text-xs text-slate-500">
-          <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+        {/* Info Tip */}
+        <div className="mt-6 flex items-start gap-2.5 rounded-xl border border-cyan-500/10 bg-slate-900/40 px-4 py-3 text-xs text-slate-400">
+          <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-cyan-500/70" />
           <p>
             Your recordings are stored locally in this browser until you
             download your dataset. Do not clear your browser data before

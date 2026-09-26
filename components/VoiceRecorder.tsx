@@ -167,7 +167,7 @@ export default function VoiceRecorder({
       {error && (
         <div
           role="alert"
-          className="mb-4 flex items-start gap-3 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800"
+          className="mb-4 flex items-start gap-3 rounded-xl border border-red-500/30 bg-red-950/40 p-4 text-sm text-red-300"
         >
           <AlertCircle className="mt-0.5 h-5 w-5 shrink-0" />
           <p>{error}</p>
@@ -178,7 +178,7 @@ export default function VoiceRecorder({
         <div className="flex flex-col items-center py-6">
           <button
             onClick={startRecording}
-            className="group flex h-24 w-24 items-center justify-center rounded-full bg-brand-600 text-black cursor-pointer shadow-xl shadow-brand-600/30 transition hover:bg-brand-700 hover:scale-105 active:scale-95"
+            className="group flex h-24 w-24 items-center justify-center rounded-full bg-cyan-600 text-white shadow-xl shadow-cyan-500/30 transition hover:bg-cyan-500 hover:scale-105 active:scale-95"
             aria-label="Start recording"
           >
             <Mic
@@ -186,10 +186,10 @@ export default function VoiceRecorder({
               strokeWidth={2}
             />
           </button>
-          <p className="mt-5 text-base font-medium text-slate-700">
+          <p className="mt-5 text-base font-medium text-white">
             Start Recording
           </p>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-400">
             Tap the microphone to begin
           </p>
         </div>
@@ -198,7 +198,7 @@ export default function VoiceRecorder({
       {state === "recording" && (
         <div className="flex flex-col items-center py-6">
           <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-red-400 recording-ring" />
+            <div className="absolute inset-0 rounded-full bg-red-400/40 recording-ring" />
             <div className="relative flex h-24 w-24 items-center justify-center rounded-full bg-red-500 text-white shadow-xl shadow-red-500/30">
               <div className="h-5 w-5 rounded-sm bg-white" />
             </div>
@@ -212,15 +212,15 @@ export default function VoiceRecorder({
               />
             ))}
           </div>
-          <p className="mt-4 text-sm font-medium text-red-600 animate-pulse-soft">
+          <p className="mt-4 text-sm font-medium text-red-400 animate-pulse">
             ● Recording
           </p>
-          <p className="mt-1 text-2xl font-semibold tabular-nums text-slate-800">
+          <p className="mt-1 text-2xl font-semibold tabular-nums text-white">
             {formatDuration(duration)}
           </p>
           <button
             onClick={stopRecording}
-            className="mt-6 flex items-center gap-2 rounded-xl bg-slate-900 px-6 py-3 text-base font-semibold text-black transition hover:bg-slate-800 active:scale-[0.98]"
+            className="mt-6 flex items-center gap-2 rounded-xl bg-slate-100 px-6 py-3 text-base font-semibold text-slate-900 transition hover:bg-white active:scale-[0.98]"
           >
             <Square className="h-4 w-4 fill-current" />
             Stop Recording
@@ -234,7 +234,7 @@ export default function VoiceRecorder({
           <div className="flex flex-col gap-3 sm:flex-row">
             <button
               onClick={reRecord}
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-50 active:scale-[0.98]"
+              className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-600 bg-slate-900/50 px-5 py-3 text-base font-medium text-slate-300 transition hover:bg-slate-800 hover:text-white active:scale-[0.98]"
             >
               <RotateCcw className="h-4 w-4" />
               Record Again
@@ -242,7 +242,7 @@ export default function VoiceRecorder({
             <button
               onClick={handleContinue}
               disabled={saving}
-              className="flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3 text-base font-medium text-slate-700 transition hover:bg-slate-50 active:scale-[0.98]"
+              className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-cyan-600 px-5 py-3 text-base font-semibold text-white shadow-lg shadow-cyan-500/20 transition hover:bg-cyan-500 active:scale-[0.98] disabled:opacity-60"
             >
               {saving ? "Saving…" : "Continue"}
               {!saving && <ArrowRight className="h-4 w-4" />}
@@ -255,7 +255,7 @@ export default function VoiceRecorder({
         <div className="flex flex-col items-center py-6">
           <button
             onClick={startRecording}
-            className="flex items-center gap-2 rounded-xl bg-brand-600 px-6 py-3 text-base font-semibold text-white transition hover:bg-brand-700"
+            className="flex items-center gap-2 rounded-xl bg-cyan-600 px-6 py-3 text-base font-semibold text-white transition hover:bg-cyan-500"
           >
             <Mic className="h-5 w-5" />
             Try Again
