@@ -56,20 +56,27 @@ export default function Hero() {
           </div>
         </div>
 
-        <h1 className="text-2xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        <h1 className="text-xl font-bold tracking-tight text-white sm:text-5xl ">
           Help Us Build{" "}
           <span className="bg-linear-to-r from-cyan-300 to-sky-400 bg-clip-text text-transparent">
-            Better Voice AI
+            AlphaQuest Voice AI
           </span>
         </h1>
 
-        <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-300 sm:mt-6 sm:text-base md:text-lg lg:text-xl">
+        <p className="mx-auto mt-5 max-w-2xl text-xs leading-relaxed text-slate-300 sm:mt-6 sm:text-base md:text-lg ">
+          AlphaQuest is an academic research project developing an interactive
+          learning system for children using voice and AI technologies. As part
+          of the research, we are collecting short voice recordings to build and
+          evaluate a voice dataset and improve the system’s performance and
+          usability for academic purposes.
+        </p>
+        {/* <p className="mx-auto mt-5 max-w-2xl text-sm leading-relaxed text-slate-300 sm:mt-6 sm:text-base md:text-lg lg:text-xl">
           Your voice can help train and improve the next generation of voice
           technology. Record your answers to 138 simple questions and download
           your complete voice dataset when you&apos;re finished.
-        </p>
+        </p> */}
 
-        <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm text-slate-400">
+        <div className="mt-4 hidden md:flex flex-wrap items-center justify-center gap-2 text-xs md:text-sm text-slate-400">
           <Waves className="h-4 w-4 shrink-0" />
           <span>
             138 questions · One recording at a time · Download everything as a

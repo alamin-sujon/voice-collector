@@ -101,9 +101,11 @@ export default function CompletePage() {
           </span>
         </h1>
 
-        <p className="mt-4 text-lg text-slate-300">
-          You successfully completed all {TOTAL_QUESTIONS} voice recordings.
-          Enter your name and download your dataset.
+        <p className="mt-4 text-sm md:text-lg text-slate-300">
+          {/* You successfully completed all {TOTAL_QUESTIONS} voice recordings. */}
+          Thank you for participating in AlphaQuest! Your contribution is
+          greatly appreciated and will help us improve AI-powered learning for
+          children. <br />
         </p>
 
         {/* Stats Card */}
